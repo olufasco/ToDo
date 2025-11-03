@@ -1,0 +1,14 @@
+﻿@page
+@model ToDo.Pages.Todos.EditModel
+<h2>Edit To-Do</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Todo.Id" />
+    <label>Title:</label>
+    <input asp-for="Todo.Title" />
+    <label>Description:</label>
+    <textarea asp-for="Todo.Description"></textarea>
+    <label>Completed:</label>
+    <input type="checkbox" asp-for="Todo.IsCompleted" />
+    <button type="submit">Update</button>
+</form>

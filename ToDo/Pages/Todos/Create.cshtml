@@ -1,0 +1,12 @@
+﻿@page
+@model ToDo.Pages.Todos.CreateModel
+
+<h2>Add New To-Do</h2>
+
+<form method="post">
+    <label>Title:</label>
+    <input asp-for="Todo.Title" />
+    <label>Description:</label>
+    <textarea asp-for="Todo.Description"></textarea>
+    <button type="submit">Save</button>
+</form>
