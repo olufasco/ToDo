@@ -1,9 +1,8 @@
 ﻿@page
-@using ToDo.Pages.Todos
 @model ToDo.Pages.Todos.IndexModel
 
-<h1>📝 My To-Do List</h1>
-<a asp-page="Create">➕ Add New Task</a>
+<h1>My To-Do List</h1>
+<a asp-page="/Create">Add New</a>
 
 <table>
     <thead>
@@ -22,8 +21,8 @@
                 <td>@todo.Description</td>
                 <td>@todo.IsCompleted</td>
                 <td>
-                    <a asp-page="Edit" asp-route-id="@todo.Id">✏️ Edit</a> |
-                    <a asp-page="Delete" asp-route-id="@todo.Id">🗑️ Delete</a>
+                    <a asp-page="Edit" asp-route-id="@todo.Id">Edit</a> |
+                    <a asp-page="Delete" asp-route-id="@todo.Id">Delete</a>
                 </td>
             </tr>
         }
