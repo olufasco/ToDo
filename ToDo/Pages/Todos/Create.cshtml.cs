@@ -5,8 +5,15 @@ using ToDo.Services;
 
 namespace ToDo.Pages.Todos;
 
-public class CreateModel(ITodoService todoService) : PageModel
+public class CreateModel : PageModel
 {
+    private readonly ITodoService _todoService;
+
+    public CreateModel(ITodoService todoService)
+    {
+        _todoService = todoService;
+    }
+
     [BindProperty]
     public Todo Todo { get; set; } = new();
 
@@ -14,7 +21,7 @@ public class CreateModel(ITodoService todoService) : PageModel
     {
         if (!ModelState.IsValid) return Page();
 
-        await todoService.AddAsync(Todo);
+        await _todoService.AddAsync(Todo);
         return RedirectToPage("Index");
     }
 }
